@@ -11,3 +11,20 @@ function calculateVAT( price ) {
     }
 }
 console.log(calculateVAT(3463))
+
+
+
+/*function signature/sample */
+function  validContact( contact ) {
+    if(typeof contact === 'string' && contact.startsWith('01') && contact.length === 11){
+        return true;
+    }
+    else if(typeof contact !== 'string'){
+        const invalidMesssage = 'Invalid'
+        return invalidMesssage;
+    }
+    else {
+        return false
+    }
+}
+console.log(validContact('01633585251'))
