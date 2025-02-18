@@ -1,6 +1,5 @@
-/*function signature/sample */
 function calculateVAT( price ) {
-    if(typeof price === 'number' && price >= 0){
+    if(typeof price === 'number' && price > 0){
         let vat = price * (7.5 / 100);
         let productPrice = vat + price
         return productPrice;
@@ -10,11 +9,11 @@ function calculateVAT( price ) {
         return invalidMesssage;
     }
 }
-// console.log(calculateVAT(34636))
+console.log(calculateVAT(34636))
 
 
 
-/*function signature/sample */
+
 function  validContact( contact ) {
     if (typeof contact === 'string' && contact.startsWith('01') && contact.length === 11 && !contact.includes(' ')){
         return true;
@@ -29,10 +28,10 @@ function  validContact( contact ) {
         return false;
     }
 }
-// console.log(validContact('01633585278'))
+console.log(validContact('01633585278'))
 
 
-/*function signature/sample */
+
 function  willSuccess( marks ) {
     let passMark = 0;
     let failMark = 0;
@@ -58,11 +57,9 @@ function  willSuccess( marks ) {
         return false;
     }
 }
+console.log(willSuccess([65, 56, 25, 75]))
 
-// console.log(willSuccess([80, 0, 10, 74, 80, 45, 32, 23]))
 
-
-/*function signature/sample */
 function  validProposal( person1 , person2 ) {
 
     if (typeof person1 !== 'object'  || typeof person2 !== 'object') {
@@ -82,4 +79,42 @@ function  validProposal( person1 , person2 ) {
 
 const person1 = { name: "Rahul", gender: "male", age: 28 }
 const person2 = { name: "Joya", gender: "female", age: 22 }
-// console.log(validProposal(person1, person2))
+
+console.log(validProposal(person1, person2))
+
+
+
+
+
+function  calculateSleepTime( times ) {
+
+    if(!Array.isArray(times) || !times.every(item => typeof item === 'number')){
+        const invalidMesssage = 'Invalid';
+        return invalidMesssage;
+        
+    }
+    let totalSecond = 0;
+    for(let second of times){
+        totalSecond = totalSecond + second;
+    }
+
+    let count = 60;
+
+    let hour = totalSecond / (count * count)
+    let hourFlr = Math.floor(hour);
+
+    let minute = totalSecond % (count * count);
+    let minuteRemaining = Math.floor(minute / count);
+
+    let secondRemaining = totalSecond % count;
+
+    let finalOutput = {
+        hour: hourFlr,
+        minute: minuteRemaining,
+        second: secondRemaining
+    };
+
+    return finalOutput;
+}
+
+console.log(calculateSleepTime([23, 5, 25]))
