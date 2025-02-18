@@ -9,4 +9,4 @@ function calculateVAT( price ) {
         return invalidMesssage;
     }
 }
-console.log(calculateVAT(34636))
+console.log(calculateVAT('100'))

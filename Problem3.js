@@ -24,4 +24,4 @@ function  willSuccess( marks ) {
     }
 }
 
-// console.log(willSuccess([65, 56, 25, 75]))
+console.log(willSuccess([65, 56, 25, 75, 35, 11]))

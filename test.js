@@ -1,15 +1,14 @@
 function calculateVAT( price ) {
     if(typeof price === 'number' && price > 0){
         let vat = price * (7.5 / 100);
-        let productPrice = vat + price
+        let productPrice = vat + price;
         return productPrice;
     }
     else {
-        const invalidMesssage = 'Invalid'
+        const invalidMesssage = 'Invalid';
         return invalidMesssage;
     }
 }
-console.log(calculateVAT(34636))
 
 
 
@@ -20,7 +19,7 @@ function  validContact( contact ) {
     }
 
     else if (typeof contact !== 'string'){
-        const invalidMesssage = 'Invalid'
+        const invalidMesssage = 'Invalid';
         return invalidMesssage;
     }
 
@@ -28,7 +27,6 @@ function  validContact( contact ) {
         return false;
     }
 }
-console.log(validContact('01633585278'))
 
 
 
@@ -37,8 +35,8 @@ function  willSuccess( marks ) {
     let failMark = 0;
 
     if(!Array.isArray(marks)){
-        const invalidMesssage = 'Invalid'
-        return invalidMesssage
+        const invalidMesssage = 'Invalid';
+        return invalidMesssage;
     }
     for(let mark of marks){
         if (mark >= 50 ){
@@ -57,13 +55,14 @@ function  willSuccess( marks ) {
         return false;
     }
 }
-console.log(willSuccess([65, 56, 25, 75]))
+
 
 
 function  validProposal( person1 , person2 ) {
 
     if (typeof person1 !== 'object'  || typeof person2 !== 'object') {
-        return 'Invalid';
+        const invalidMesssage = 'Invalid';
+        return invalidMesssage;
     }
 
     let age1 = person1.age;
@@ -77,22 +76,23 @@ function  validProposal( person1 , person2 ) {
    
 }
 
-const person1 = { name: "Rahul", gender: "male", age: 28 }
-const person2 = { name: "Joya", gender: "female", age: 22 }
-
-console.log(validProposal(person1, person2))
-
-
-
 
 
 function  calculateSleepTime( times ) {
 
-    if(!Array.isArray(times) || !times.every(item => typeof item === 'number')){
+    if(!Array.isArray(times)){
         const invalidMesssage = 'Invalid';
         return invalidMesssage;
         
     }
+
+    for(let i = 0; i < times.length; i++){
+      if(typeof times[i] !== 'number'){
+        const invalidMesssage = 'Invalid';
+        return invalidMesssage;
+      }
+    }
+
     let totalSecond = 0;
     for(let second of times){
         totalSecond = totalSecond + second;
@@ -116,5 +116,3 @@ function  calculateSleepTime( times ) {
 
     return finalOutput;
 }
-
-console.log(calculateSleepTime([23, 5, 25]))

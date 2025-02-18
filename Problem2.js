@@ -12,4 +12,4 @@ function  validContact( contact ) {
         return false;
     }
 }
-console.log(validContact('01633585278'))
+console.log(validContact(0163358278))

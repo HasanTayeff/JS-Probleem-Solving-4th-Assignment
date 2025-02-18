@@ -16,6 +16,6 @@ function  validProposal( person1 , person2 ) {
 }
 
 const person1 = { name: "Rahul", gender: "male", age: 28 }
-const person2 = { name: "Joya", gender: "female", age: 19 }
+const person2 = { name: "Joya", gender: "female", age: 29 }
 
-// console.log(validProposal(person1, person2))
+console.log(validProposal(person1, person2))

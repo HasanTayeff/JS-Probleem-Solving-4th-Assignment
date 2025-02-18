@@ -1,10 +1,17 @@
 function  calculateSleepTime( times ) {
 
-    if(!Array.isArray(times) || !times.every(item => typeof item === 'number')){
+    if(!Array.isArray(times)){
         const invalidMesssage = 'Invalid';
         return invalidMesssage;
         
     }
+    for(let i = 0; i < times.length; i++){
+      if(typeof times[i] !== 'number'){
+        const invalidMesssage = 'Invalid';
+        return invalidMesssage;
+      }
+    }
+
     let totalSecond = 0;
     for(let second of times){
         totalSecond = totalSecond + second;
@@ -29,4 +36,4 @@ function  calculateSleepTime( times ) {
     return finalOutput;
 }
 
-// console.log(calculateSleepTime([23, 5, 25]))
+console.log(calculateSleepTime([23, 67, 25]))
